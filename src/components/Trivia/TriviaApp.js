@@ -1,6 +1,6 @@
 import Question from "./Question.js"
 import {useEffect, useState} from "react"
-
+import {Helmet} from "react-helmet"
 function TriviaApp() {
   const [triviaData, setTriviaData] = useState();
   const [totalAnswered, setTotalAnswered] = useState(0);
@@ -29,6 +29,9 @@ function TriviaApp() {
   if (triviaData) {
     return (
       <div className="App">
+        <Helmet>
+          <title>Trivia App</title>
+        </Helmet>
         <h1>Trivia</h1>
         <p>Your score: {totalCorrect} / {totalAnswered} ({percentage}%)</p>
         <button onClick={generateQuestions}>New Questions</button>

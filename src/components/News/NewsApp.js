@@ -4,7 +4,7 @@ function NewsApp() {
   return (
     <>
     <Helmet>
-        <title>News App</title>
+      <title>News App</title>
     </Helmet>
     <div>News App</div>
     </>

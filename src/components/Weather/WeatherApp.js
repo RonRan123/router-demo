@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Header from './Header.js';
 import Dashboard from "./Dashboard.js";
 import {getCoordinates} from '../../utils/WeatherUtils';
+import Helmet from "react-helmet";
 
 function WeatherApp(){
     const [input, setInput] = useState('Charlottesville');
@@ -23,9 +24,11 @@ function WeatherApp(){
     fetchData();
     return () => { ignore = true; }
     }, [input]);
-
     return (
         <>
+            <Helmet>
+                <title>Weather App</title>
+            </Helmet>
             <Header onLocationSubmit= {(loc) => setInput(loc)}/>
             {position && <Dashboard location={location} position={position}/>}
         </>
